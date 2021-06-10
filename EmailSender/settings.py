@@ -84,8 +84,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-SENTGRID_API_KEY = "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"
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = env.get_value("SENTGRID_API_KEY")
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
+LOGIN_URL = "accounts/login/"
+LOGIN_REDIRECT_URL = "/"
 
 LANGUAGE_CODE = 'en-us'
 
