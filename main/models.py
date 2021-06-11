@@ -60,7 +60,6 @@ class VerificationToken(models.Model):
 class ForgotPasswordToken(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="forgot_token")
     token = models.CharField(max_length=100)
-    verified = models.BooleanField(default=False)
     confirmed = models.BooleanField(default=False)
     date_created = models.DateField(auto_now_add=True)
     time_created = models.DateTimeField(auto_now_add=True)
